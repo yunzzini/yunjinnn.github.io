@@ -3,20 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Yunjin's Blue Archive 📂</title>
+    <title>Yunjin Cho Archive</title>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Pretendard:wght@400;700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Pretendard:wght@400;500;700&display=swap');
 
         :root {
-            --main-blue: #007bff;
-            --light-blue: #e7f3ff;
-            --bg-color: #f8fbff;
+            --primary-color: #0d6efd;
+            --secondary-color: #6c757d;
+            --bg-color: #f8f9fa;
+            --card-bg: #ffffff;
+            --border-color: #dee2e6;
         }
 
         body {
             font-family: 'Pretendard', sans-serif;
             background-color: var(--bg-color);
-            color: #333;
+            color: #212529;
             margin: 0;
             display: flex;
             justify-content: center;
@@ -25,79 +27,97 @@
 
         .container {
             width: 90%;
-            max-width: 500px;
-            margin-top: 60px;
+            max-width: 600px;
+            margin-top: 50px;
+            padding-bottom: 50px;
         }
 
+        /* 프로필 섹션 */
         header {
             text-align: center;
             margin-bottom: 50px;
         }
 
-        .profile-circle {
-            width: 80px;
-            height: 80px;
-            background-color: var(--main-blue);
-            color: white;
-            border-radius: 30px; /* 약간 둥근 사각형 느낌으로 귀엽게 */
-            margin: 0 auto 20px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 2.5rem;
-            box-shadow: 0 10px 20px rgba(0,123,255,0.2);
+        .profile-badge {
+            display: inline-block;
+            background-color: #e2e8f0;
+            color: var(--primary-color);
+            font-weight: 700;
+            font-size: 0.85rem;
+            padding: 6px 16px;
+            border-radius: 50px;
+            margin-bottom: 20px;
+            letter-spacing: 0.5px;
         }
 
-        h1 { font-size: 1.8rem; margin: 0; color: #1a1a1a; }
-        p.desc { color: #666; margin-top: 8px; font-size: 1.1rem; }
+        h1 {
+            font-size: 2.2rem;
+            font-weight: 700;
+            margin: 0 0 10px 0;
+            color: #1a202c;
+        }
 
-        /* 심플한 카드 메뉴 */
+        p.desc {
+            color: var(--secondary-color);
+            font-size: 1.05rem;
+            margin: 0;
+        }
+
+        /* 메뉴 리스트 */
         .menu-list {
             display: flex;
             flex-direction: column;
-            gap: 20px;
+            gap: 18px;
         }
 
         .menu-item {
-            background: white;
-            padding: 25px;
-            border-radius: 20px;
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            padding: 24px;
+            border-radius: 12px;
             text-decoration: none;
             color: inherit;
             display: flex;
             align-items: center;
-            gap: 20px;
-            transition: 0.3s;
-            border: 2px solid transparent;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+            gap: 22px;
+            transition: all 0.2s ease-in-out;
         }
 
         .menu-item:hover {
-            transform: translateY(-5px);
-            border-color: var(--main-blue);
-            box-shadow: 0 10px 20px rgba(0,123,255,0.1);
+            border-color: var(--primary-color);
+            box-shadow: 0 8px 24px rgba(13, 110, 253, 0.08);
+            transform: translateY(-2px);
         }
 
         .icon {
-            font-size: 2rem;
-            background: var(--light-blue);
-            width: 60px;
-            height: 60px;
+            font-size: 1.6rem;
+            background-color: #f1f5f9;
+            width: 54px;
+            height: 54px;
             display: flex;
             align-items: center;
             justify-content: center;
-            border-radius: 15px;
+            border-radius: 10px;
         }
 
-        .text h3 { margin: 0; font-size: 1.2rem; color: var(--main-blue); }
-        .text p { margin: 5px 0 0; font-size: 0.95rem; color: #888; }
+        .text h3 {
+            margin: 0 0 6px 0;
+            font-size: 1.15rem;
+            color: #2d3748;
+            font-weight: 700;
+        }
+
+        .text p {
+            margin: 0;
+            font-size: 0.9rem;
+            color: var(--secondary-color);
+        }
 
         footer {
             text-align: center;
             margin-top: 60px;
-            color: #ccc;
-            font-size: 0.85rem;
-            padding-bottom: 40px;
+            color: #a0aec0;
+            font-size: 0.8rem;
         }
     </style>
 </head>
@@ -105,39 +125,39 @@
 
     <div class="container">
         <header>
-            <div class="profile-circle">🧪</div>
+            <div class="profile-badge">CHEMICAL & BIOLOGICAL ENGINEERING</div>
             <h1>Yunjin Cho</h1>
-            <p class="desc">Bio & Chem Engineering Archive</p>
+            <p class="desc">Research and Documentation Archive</p>
         </header>
 
         <nav class="menu-list">
-            <a href="lab.html" class="menu-item">
+            <a href="lab-lactic-acid.html" class="menu-item">
                 <div class="icon">🔬</div>
                 <div class="text">
                     <h3>Lab Log</h3>
-                    <p>생명과학 실험 및 연구 기록</p>
+                    <p>미생물 실험 및 블루라이트 연구 기록</p>
                 </div>
             </a>
 
-            <a href="lab-lactic-acid.html" class="menu-item">
+            <a href="library.html" class="menu-item">
                 <div class="icon">📚</div>
                 <div class="text">
                     <h3>Library</h3>
-                    <p>문학-과학 융합 및 독서 기록</p>
+                    <p>문학과 과학 융합 탐구 및 독서록</p>
                 </div>
             </a>
 
             <a href="sandbox.html" class="menu-item">
-                <div class="icon">🎡</div>
+                <div class="icon">🛠️</div>
                 <div class="text">
                     <h3>Sandbox</h3>
-                    <p>재미있는 과학 이야기 & 이그노벨</p>
+                    <p>자율 탐구 및 사이언스 프로젝트</p>
                 </div>
             </a>
         </nav>
 
         <footer>
-            <p>© 2026 Yunjin Cho. All Rights Reserved.</p>
+            <p>&copy; 2026 Yunjin Cho. All rights reserved.</p>
         </footer>
     </div>
 
