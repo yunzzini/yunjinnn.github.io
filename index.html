@@ -1,4 +1,3 @@
-```html
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -15,9 +14,7 @@
     />
 
     <style>
-
         :root {
-
             --bg: #020617;
             --navy: #0d1b2a;
             --blue: #1e3a8a;
@@ -28,1209 +25,1025 @@
 
             --glass: rgba(255,255,255,0.03);
             --border: rgba(255,255,255,0.08);
-
         }
 
         * {
-
             box-sizing: border-box;
-            transition: all 0.4s ease;
-
         }
 
         body {
-
             font-family: 'Pretendard', sans-serif;
-
             background-color: var(--bg);
-
             color: var(--text-main);
-
             margin: 0;
-
             overflow-x: hidden;
-
         }
 
         /* NAVIGATION */
-
         nav {
-
             position: fixed;
-
             top: 0;
-
             width: 100%;
-
             z-index: 1000;
-
             padding: 20px 5%;
-
             display: flex;
-
             justify-content: space-between;
-
             align-items: center;
-
             background: rgba(2,6,23,0.8);
-
             backdrop-filter: blur(15px);
-
             border-bottom: 1px solid var(--border);
-
         }
 
         .logo {
-
+            background: none;
+            border: none;
+            font-family: inherit;
+            font-size: 1.2rem;
             font-weight: 900;
-
             color: var(--gold);
-
             cursor: pointer;
-
             letter-spacing: 1px;
-
+            padding: 0;
         }
 
-        .nav-links span {
+        .nav-links {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+        }
 
-            margin-left: 20px;
-
+        .nav-links button {
+            background: none;
+            border: none;
+            font-family: inherit;
             font-size: 0.9rem;
-
             color: var(--text-sub);
-
             cursor: pointer;
-
+            padding: 0;
+            transition: color 0.3s ease;
         }
 
-        .nav-links span:hover {
-
+        .nav-links button:hover {
             color: var(--gold);
+        }
 
+        .btn-admin-nav {
+            border: 1px solid rgba(194,168,120,0.4) !important;
+            padding: 6px 14px !important;
+            border-radius: 999px;
         }
 
         /* SECTION */
-
         section {
-
             display: none;
-
             padding: 120px 5% 80px;
-
             min-height: 100vh;
-
-            animation: fadeIn 0.6s ease;
-
         }
 
         section.active {
-
             display: block;
-
+            animation: fadeIn 0.6s ease forwards;
         }
 
         @keyframes fadeIn {
-
             from {
-
                 opacity: 0;
                 transform: translateY(20px);
-
             }
-
             to {
-
                 opacity: 1;
                 transform: translateY(0);
-
             }
-
         }
 
         /* HOME */
-
         .hero {
-
             text-align: center;
-
             max-width: 1000px;
-
             margin: 0 auto;
-
         }
 
         h1 {
-
             font-size: clamp(2.7rem, 8vw, 5rem);
-
             font-weight: 900;
-
             letter-spacing: -3px;
-
             line-height: 1.1;
-
             margin: 20px 0;
-
         }
 
         .slogan {
-
             color: var(--text-sub);
-
             font-size: 1.15rem;
-
             margin-bottom: 60px;
-
             line-height: 1.8;
-
         }
 
         .grid {
-
             display: grid;
-
             grid-template-columns: repeat(12, 1fr);
-
             gap: 24px;
-
         }
 
         .card {
-
             grid-column: span 6;
-
             background: var(--glass);
-
             border: 1px solid var(--border);
-
             border-radius: 30px;
-
             padding: 40px;
-
             cursor: pointer;
-
             text-align: left;
-
             backdrop-filter: blur(10px);
-
+            transition: transform 0.3s ease, border-color 0.3s ease, background 0.3s ease;
         }
 
         .card:hover {
-
             transform: translateY(-10px);
-
             border-color: rgba(194,168,120,0.4);
-
             background: rgba(255,255,255,0.05);
-
         }
 
         .card.wide {
-
             grid-column: span 12;
-
         }
 
         .card h2 {
-
             color: var(--gold);
-
             margin-top: 0;
-
             margin-bottom: 15px;
-
         }
 
         .card p {
-
             color: var(--text-sub);
-
             line-height: 1.7;
-
         }
 
         /* CONTENT */
-
         .content-header {
-
             border-left: 4px solid var(--gold);
-
             padding-left: 20px;
-
             margin-bottom: 50px;
-
         }
 
         .content-header p {
-
             color: var(--text-sub);
-
             line-height: 1.8;
-
         }
 
         .post-list {
-
             display: flex;
-
             flex-direction: column;
-
             gap: 16px;
-
         }
 
         .post-item {
-
             background: var(--glass);
-
             border: 1px solid var(--border);
-
             border-radius: 18px;
-
             padding: 22px;
-
             display: flex;
-
             justify-content: space-between;
-
             align-items: center;
-
+            transition: border-color 0.3s ease, transform 0.3s ease;
         }
 
         .post-item:hover {
-
             border-color: var(--gold);
-
             transform: translateX(8px);
-
         }
 
         .btn-back {
-
             display: inline-block;
-
             margin-top: 50px;
-
             color: var(--gold);
-
             cursor: pointer;
-
+            background: none;
+            border: none;
+            font-family: inherit;
+            font-size: 1rem;
+            padding: 0;
+            transition: opacity 0.3s ease;
+        }
+        
+        .btn-back:hover {
+            opacity: 0.8;
         }
 
-        /* =========================
-           IG NOBEL ARCHIVE
-        ========================= */
-
+        /* IG NOBEL ARCHIVE */
         .ignobel-header h1 {
-
             color: var(--gold);
-
         }
 
         .ignobel-sub {
-
             color: var(--text-sub);
-
             line-height: 1.8;
-
         }
 
         .filter-wrap {
-
             display: flex;
-
             justify-content: space-between;
-
             align-items: center;
-
             flex-wrap: wrap;
-
             gap: 20px;
-
             margin-bottom: 50px;
-
         }
 
         .filter-group {
-
             display: flex;
-
             gap: 12px;
-
             flex-wrap: wrap;
-
         }
 
         .filter-btn {
-
             background: transparent;
-
             border: 1px solid var(--border);
-
             color: var(--text-sub);
-
             padding: 10px 18px;
-
             border-radius: 999px;
-
             cursor: pointer;
-
             font-family: inherit;
-
+            transition: border-color 0.3s ease, color 0.3s ease, background 0.3s ease;
         }
 
         .filter-btn:hover,
         .filter-btn.active {
-
             border-color: var(--gold);
-
             color: var(--gold);
-
             background: rgba(194,168,120,0.08);
-
         }
 
         .search-box input {
-
             background: rgba(255,255,255,0.04);
-
             border: 1px solid var(--border);
-
             color: white;
-
             padding: 12px 18px;
-
             border-radius: 999px;
-
             width: 240px;
-
             outline: none;
-
+            transition: border-color 0.3s ease;
         }
 
         .search-box input:focus {
-
             border-color: var(--gold);
-
         }
 
         .archive-grid {
-
             display: grid;
-
-            grid-template-columns:
-                repeat(auto-fit, minmax(320px, 1fr));
-
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
             gap: 25px;
-
         }
 
         .archive-card {
-
             background: var(--glass);
-
             border: 1px solid var(--border);
-
             border-radius: 30px;
-
             padding: 32px;
-
             backdrop-filter: blur(12px);
-
+            transition: transform 0.3s ease, border-color 0.3s ease, background 0.3s ease;
         }
 
         .archive-card:hover {
-
             transform: translateY(-10px);
-
             border-color: rgba(194,168,120,0.45);
-
             background: rgba(255,255,255,0.05);
-
         }
 
         .archive-top {
-
             display: flex;
-
             justify-content: space-between;
-
             align-items: center;
-
             margin-bottom: 25px;
-
         }
 
         .archive-tag {
-
             border: 1px solid rgba(194,168,120,0.35);
-
             color: var(--gold);
-
             padding: 6px 14px;
-
             border-radius: 999px;
-
             font-size: 0.72rem;
-
             letter-spacing: 1px;
-
+            text-transform: uppercase;
         }
 
         .archive-number {
-
             color: rgba(255,255,255,0.15);
-
             font-size: 2rem;
-
             font-weight: 900;
-
         }
 
         .archive-card h2 {
-
             margin: 0;
-
             font-size: 2rem;
-
             line-height: 1.1;
-
         }
 
         .archive-kor {
-
             color: var(--gold);
-
             margin-top: 14px;
-
             line-height: 1.6;
-
         }
 
         .archive-desc {
-
             color: var(--text-sub);
-
             line-height: 1.8;
-
             margin-top: 20px;
-
             font-size: 0.95rem;
-
         }
 
         .archive-extra {
-
             display: flex;
-
             gap: 30px;
-
             margin-top: 30px;
-
             padding-top: 24px;
-
             border-top: 1px solid rgba(255,255,255,0.08);
-
         }
 
         .mini-info {
-
             display: flex;
-
             flex-direction: column;
-
             gap: 8px;
-
         }
 
         .mini-label {
-
             font-size: 0.7rem;
-
             color: rgba(255,255,255,0.4);
-
             letter-spacing: 1px;
-
         }
 
         .view-btn {
-
             margin-top: 35px;
-
             background: transparent;
-
             border: none;
-
             color: var(--gold);
-
             cursor: pointer;
-
             padding: 0;
-
             font-size: 0.95rem;
-
+            transition: transform 0.3s ease;
         }
 
         .view-btn:hover {
-
             transform: translateX(6px);
-
         }
 
         .ignobel-quote {
-
             text-align: center;
-
             margin-top: 100px;
-
             opacity: 0.75;
-
         }
 
         .ignobel-quote p {
-
             color: var(--gold);
-
             font-style: italic;
-
             line-height: 1.8;
-
             font-size: 1.4rem;
+        }
 
+        /* ADMIN FORM STYLE */
+        .admin-form {
+            max-width: 600px;
+            background: var(--glass);
+            border: 1px solid var(--border);
+            padding: 40px;
+            border-radius: 30px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            backdrop-filter: blur(12px);
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .form-group label {
+            font-size: 0.85rem;
+            color: var(--text-sub);
+            letter-spacing: 0.5px;
+        }
+
+        .form-group input, 
+        .form-group select, 
+        .form-group textarea {
+            background: rgba(255,255,255,0.04);
+            border: 1px solid var(--border);
+            color: white;
+            padding: 12px 16px;
+            border-radius: 12px;
+            outline: none;
+            font-family: inherit;
+            transition: border-color 0.3s ease;
+        }
+
+        .form-group input:focus, 
+        .form-group select:focus, 
+        .form-group textarea:focus {
+            border-color: var(--gold);
+        }
+
+        .btn-submit {
+            background: var(--gold);
+            color: var(--bg);
+            border: none;
+            padding: 14px;
+            border-radius: 12px;
+            font-weight: 700;
+            cursor: pointer;
+            font-family: inherit;
+            transition: opacity 0.3s ease, transform 0.2s ease;
+            margin-top: 10px;
+        }
+
+        .btn-submit:hover {
+            opacity: 0.9;
+            transform: translateY(-2px);
         }
 
         /* FOOTER */
-
         footer {
-
             text-align: center;
-
             padding: 60px;
-
             color: var(--text-sub);
-
             font-size: 0.8rem;
-
         }
 
         /* MOBILE */
-
         @media (max-width: 768px) {
-
             .grid {
-
                 grid-template-columns: 1fr;
-
             }
 
             .card,
             .card.wide {
-
                 grid-column: span 1;
-
             }
 
             .archive-card {
-
                 padding: 26px;
-
             }
 
             .archive-card h2 {
-
                 font-size: 1.6rem;
-
             }
 
             .search-box input {
-
                 width: 100%;
-
             }
-
         }
-
     </style>
 </head>
 
 <body>
 
-    <!-- NAV -->
-
     <nav>
-
-        <div class="logo"
-             onclick="showSection('home')">
-
+        <button class="logo" onclick="showSection('home')">
             YJ ARCHIVE
-
-        </div>
-
+        </button>
         <div class="nav-links">
-
-            <span onclick="showSection('lab')">
-                Lab Log
-            </span>
-
-            <span onclick="showSection('ignobel')">
-                Ig Nobel
-            </span>
-
-            <span onclick="showSection('idea')">
-                Idea Lab
-            </span>
-
+            <button onclick="showSection('lab')">Lab Log</button>
+            <button onclick="showSection('ignobel')">Ig Nobel</button>
+            <button onclick="showSection('idea')">Idea Lab</button>
+            <button class="btn-admin-nav" onclick="tryAdminAccess()">Admin</button>
         </div>
-
     </nav>
 
-    <!-- HOME -->
-
     <section id="home" class="active">
-
         <div class="hero">
-
             <h1>
                 Lab Log /<br>
                 Biochemistry Archive
             </h1>
-
             <p class="slogan">
                 “Curious questions lead to meaningful discoveries.”
             </p>
 
             <div class="grid">
-
-                <div class="card wide"
-                     onclick="showSection('ignobel')">
-
-                    <h2>
-                        Ig Nobel Archive
-                    </h2>
-
+                <div class="card wide" onclick="showSection('ignobel')">
+                    <h2>Ig Nobel Archive</h2>
                     <p>
-                        이그노벨상의 엉뚱하고도 위대한 연구들을
-                        생명공학적 관점으로 재해석합니다.
+                        이그노벨상의 엉뚱하고도 위대한 연구들을 생명공학적 관점으로 재해석합니다.
                     </p>
-
                 </div>
 
-                <div class="card"
-                     onclick="showSection('lab')">
-
-                    <h2>
-                        Lab Log
-                    </h2>
-
-                    <p>
-                        실험 데이터 및 연구 과정 아카이브
-                    </p>
-
+                <div class="card" onclick="showSection('lab')">
+                    <h2>Lab Log</h2>
+                    <p>실험 데이터 및 연구 과정 아카이브</p>
                 </div>
 
-                <div class="card"
-                     onclick="showSection('idea')">
-
-                    <h2>
-                        Idea Lab
-                    </h2>
-
-                    <p>
-                        창의적 가설과 자유 탐구 샌드박스
-                    </p>
-
+                <div class="card" onclick="showSection('idea')">
+                    <h2>Idea Lab</h2>
+                    <p>창의적 가설과 자유 탐구 샌드박스</p>
                 </div>
-
             </div>
-
         </div>
-
     </section>
 
-    <!-- LAB -->
-
     <section id="lab">
-
         <div class="content-header">
-
-            <h1>
-                Lab Log / Library
-            </h1>
-
-            <p>
-                전문적인 실험 기록과 학술 자료 보관소입니다.
-            </p>
-
+            <h1>Lab Log / Library</h1>
+            <p>전문적인 실험 기록과 학술 자료 보관소입니다.</p>
         </div>
 
         <div class="post-list">
-
             <div class="post-item">
-
-                <span>
-                    젖산(Lactic Acid) 실험을 통한 미생물 대사 분석
-                </span>
-
-                <span style="color:var(--gold)">
-                    2026.04.28
-                </span>
-
+                <span>젖산(Lactic Acid) 실험을 통한 미생물 대사 분석</span>
+                <span style="color:var(--gold)">2026.04.28</span>
             </div>
-
             <div class="post-item">
-
-                <span>
-                    단백질 접힘 자유에너지 계산 시뮬레이션
-                </span>
-
-                <span>
-                    Coming Soon
-                </span>
-
+                <span>단백질 접힘 자유에너지 계산 시뮬레이션</span>
+                <span>Coming Soon</span>
             </div>
-
         </div>
 
-        <a class="btn-back"
-           onclick="showSection('home')">
-
-           ← Back to Home
-
-        </a>
-
+        <button class="btn-back" onclick="showSection('home')">
+            ← Back to Home
+        </button>
     </section>
 
-    <!-- IG NOBEL -->
-
     <section id="ignobel">
-
         <div class="content-header ignobel-header">
-
-            <h1>
-                Ig Nobel Archive
-            </h1>
-
+            <h1>Ig Nobel Archive</h1>
             <p class="ignobel-sub">
                 먼저 웃고, 그다음 생각하게 만드는 연구들.<br>
                 비정상적으로 진지한 과학의 기록.
             </p>
-
         </div>
 
-        <!-- FILTER -->
-
         <div class="filter-wrap">
-
             <div class="filter-group">
-
-                <button class="filter-btn active"
-                        onclick="filterArchive('all', this)">
-                    ALL
-                </button>
-
-                <button class="filter-btn"
-                        onclick="filterArchive('biology', this)">
-                    Biology
-                </button>
-
-                <button class="filter-btn"
-                        onclick="filterArchive('chemistry', this)">
-                    Chemistry
-                </button>
-
-                <button class="filter-btn"
-                        onclick="filterArchive('physics', this)">
-                    Physics
-                </button>
-
-                <button class="filter-btn"
-                        onclick="filterArchive('medicine', this)">
-                    Medicine
-                </button>
-
+                <button class="filter-btn active" onclick="filterArchive('all', this)">ALL</button>
+                <button class="filter-btn" onclick="filterArchive('biology', this)">Biology</button>
+                <button class="filter-btn" onclick="filterArchive('chemistry', this)">Chemistry</button>
+                <button class="filter-btn" onclick="filterArchive('physics', this)">Physics</button>
+                <button class="filter-btn" onclick="filterArchive('medicine', this)">Medicine</button>
             </div>
 
             <div class="search-box">
+                <input type="text" id="searchInput" placeholder="Search Archive..." onkeyup="searchArchive()">
+            </div>
+        </div>
 
-                <input type="text"
-                       id="searchInput"
-                       placeholder="Search Archive..."
-                       onkeyup="searchArchive()">
+        <div class="archive-grid" id="archiveGrid">
+            
+            <div class="archive-card" data-category="biology">
+                <div class="archive-top">
+                    <span class="archive-tag">BIOLOGY · 2000</span>
+                    <span class="archive-number">#01</span>
+                </div>
+                <h2>Levitating Frogs</h2>
+                <p class="archive-kor">살아있는 개구리를 자기장으로 공중부양시킬 수 있는가?</p>
+                <p class="archive-desc">
+                    강한 자기장에서 생체 조직이 보이는 반자성(diamagnetism) 현상을 연구한 실험. 물 분자의 미세 자성을 극대화하여 중력을 상쇄함.
+                </p>
+                <div class="archive-extra">
+                    <div class="mini-info">
+                        <span class="mini-label">FIELD</span>
+                        <span>Biophysics</span>
+                    </div>
+                    <div class="mini-info">
+                        <span class="mini-label">MEANING</span>
+                        <span>MRI 장비 고도화 및 무중력 시뮬레이션 응용</span>
+                    </div>
+                </div>
+                <button class="view-btn">View Archive →</button>
+            </div>
 
+            <div class="archive-card" data-category="physics">
+                <div class="archive-top">
+                    <span class="archive-tag">PHYSICS · 2017</span>
+                    <span class="archive-number">#02</span>
+                </div>
+                <h2>Cat Fluid Dynamics</h2>
+                <p class="archive-kor">고양이는 액체인가, 고체인가?</p>
+                <p class="archive-desc">
+                    고양이가 담기는 용기의 형태에 맞춰 몸을 완전히 변형하는 특성을 데보라 수(Deborah number) 개념을 도입하여 유체역학적으로 규명함.
+                </p>
+                <div class="archive-extra">
+                    <div class="mini-info">
+                        <span class="mini-label">FIELD</span>
+                        <span>Rheology / Fluid Mechanics</span>
+                    </div>
+                    <div class="mini-info">
+                        <span class="mini-label">MEANING</span>
+                        <span>비뉴턴 유체의 점탄성 분석 모델 구체화</span>
+                    </div>
+                </div>
+                <button class="view-btn">View Archive →</button>
+            </div>
+
+            <div class="archive-card" data-category="medicine">
+                <div class="archive-top">
+                    <span class="archive-tag">MEDICINE · 2022</span>
+                    <span class="archive-number">#03</span>
+                </div>
+                <h2>Ice Cream Headache</h2>
+                <p class="archive-kor">차가운 음식을 급하게 먹으면 발생하는 뇌 동결 현상</p>
+                <p class="archive-desc">
+                    상악 전반에 차가운 자극이 도달했을 때 대뇌 전방 동맥의 급격한 혈류량 변화와 신경 다발의 통증 매개 물질 분비 메커니즘 분석.
+                </p>
+                <div class="archive-extra">
+                    <div class="mini-info">
+                        <span class="mini-label">FIELD</span>
+                        <span>Neurology</span>
+                    </div>
+                    <div class="mini-info">
+                        <span class="mini-label">MEANING</span>
+                        <span>편두통 환자의 급성 혈관 수축/확장 메커니즘 힌트 제공</span>
+                    </div>
+                </div>
+                <button class="view-btn">View Archive →</button>
+            </div>
+
+            <div class="archive-card" data-category="chemistry">
+                <div class="archive-top">
+                    <span class="archive-tag">CHEMISTRY · 2007</span>
+                    <span class="archive-number">#04</span>
+                </div>
+                <h2>Cow Dung Vanilla</h2>
+                <p class="archive-kor">소의 배설물에서 바닐라 향료 추출하기</p>
+                <p class="archive-desc">
+                    초식동물의 분변에 다량 포함된 리그닌 성분을 화학적으로 분해하고 정제하여, 천연 바닐라 향의 핵심 분자인 바닐린(Vanillin)을 고순도로 합성.
+                </p>
+                <div class="archive-extra">
+                    <div class="mini-info">
+                        <span class="mini-label">FIELD</span>
+                        <span>Organic Synthesis</span>
+                    </div>
+                    <div class="mini-info">
+                        <span class="mini-label">MEANING</span>
+                        <span>폐기물 자원화를 통한 고부가가치 화학 원료 업사이클링</span>
+                    </div>
+                </div>
+                <button class="view-btn">View Archive →</button>
+            </div>
+
+            <div class="archive-card" data-category="biology">
+                <div class="archive-top">
+                    <span class="archive-tag">BIOLOGY · 2011</span>
+                    <span class="archive-number">#05</span>
+                </div>
+                <h2>Beetle's Misdirected Passion</h2>
+                <p class="archive-kor">갈색 맥주병을 암컷으로 착각하는 딱정벌레</p>
+                <p class="archive-desc">
+                    특정 호주 딱정벌레 수컷들이 특정 갈색 단면과 돌기가 있는 맥주병 표면 패턴을 암컷의 성적 시그널보다 더 강력하게 인지하는 진화적 오류 현상.
+                </p>
+                <div class="archive-extra">
+                    <div class="mini-info">
+                        <span class="mini-label">FIELD</span>
+                        <span>Evolutionary Ecology</span>
+                    </div>
+                    <div class="mini-info">
+                        <span class="mini-label">MEANING</span>
+                        <span>인공 시각 자극이 야생 생물의 번식 생태계에 미치는 혼란 입증</span>
+                    </div>
+                </div>
+                <button class="view-btn">View Archive →</button>
+            </div>
+
+            <div class="archive-card" data-category="medicine">
+                <div class="archive-top">
+                    <span class="archive-tag">MEDICINE · 2018</span>
+                    <span class="archive-number">#06</span>
+                </div>
+                <h2>Roller Coaster Kidney Stones</h2>
+                <p class="archive-kor">롤러코스터 탑승이 신장 결석 배출에 미치는 영향</p>
+                <p class="archive-desc">
+                    3D 프린터로 제작한 신장 모형을 가지고 디즈니월드 빅 썬더 마운틴을 탑승하여 실험. 후방 좌석에 앉을 때 결석 배출률이 급격히 증가함을 확인.
+                </p>
+                <div class="archive-extra">
+                    <div class="mini-info">
+                        <span class="mini-label">FIELD</span>
+                        <span>Urology / Biomechanics</span>
+                    </div>
+                    <div class="mini-info">
+                        <span class="mini-label">MEANING</span>
+                        <span>물리적 가속도와 중력 변화를 이용한 비침습적 결석 제거 가설</span>
+                    </div>
+                </div>
+                <button class="view-btn">View Archive →</button>
+            </div>
+
+            <div class="archive-card" data-category="physics">
+                <div class="archive-top">
+                    <span class="archive-tag">PHYSICS · 2009</span>
+                    <span class="archive-number">#07</span>
+                </div>
+                <h2>Wombat's Cubic Feces</h2>
+                <p class="archive-kor">웜뱃은 어떻게 주사위 모양의 똥을 누는가?</p>
+                <p class="archive-desc">
+                    웜뱃의 장벽 마지막 8% 구간에서 국소적인 탄성 차이가 존재함을 발견. 수분 흡수 과정에서 비균일한 수축이 일어나 완벽한 육면체 구조가 형성됨.
+                </p>
+                <div class="archive-extra">
+                    <div class="mini-info">
+                        <span class="mini-label">FIELD</span>
+                        <span>Soft Matter Physics</span>
+                    </div>
+                    <div class="mini-info">
+                        <span class="mini-label">MEANING</span>
+                        <span>제조 공정에서 틀 없이 사각형 구조물을 성형하는 생체 모방 기술</span>
+                    </div>
+                </div>
+                <button class="view-btn">View Archive →</button>
+            </div>
+
+            <div class="archive-card" data-category="chemistry">
+                <div class="archive-top">
+                    <span class="archive-tag">CHEMISTRY · 2015</span>
+                    <span class="archive-number">#08</span>
+                </div>
+                <h2>Unboiling an Egg</h2>
+                <p class="archive-kor">삶은 계란 흰자를 다시 원래 투명한 상태로 되돌리기</p>
+                <p class="archive-desc">
+                    열에 의해 응고되고 변성된 리소자임 단백질 가닥에 화학 물질 우레아(Urea)를 투입한 뒤, 강한 회전 전단력을 주어 원래의 고차 구조로 재폴딩 성공.
+                </p>
+                <div class="archive-extra">
+                    <div class="mini-info">
+                        <span class="mini-label">FIELD</span>
+                        <span>Protein Biochemistry</span>
+                    </div>
+                    <div class="mini-info">
+                        <span class="mini-label">MEANING</span>
+                        <span>산업용 단백질 합성 가공 시 손상된 효소 재활용 공정 개척</span>
+                    </div>
+                </div>
+                <button class="view-btn">View Archive →</button>
+            </div>
+
+            <div class="archive-card" data-category="biology">
+                <div class="archive-top">
+                    <span class="archive-tag">BIOLOGY · 2021</span>
+                    <span class="archive-number">#09</span>
+                </div>
+                <h2>Rhino Upside Down</h2>
+                <p class="archive-kor">코뿔소를 거꾸로 매달아 수송하는 것은 안전한가?</p>
+                <p class="archive-desc">
+                    아프리카 생태 보호를 위해 헬기로 코뿔소를 이송할 때 발목을 묶어 거꾸로 매다는 방식이 옆으로 눕히는 방식보다 폐 환기량 및 혈중 산소도 유지에 유리함을 증명.
+                </p>
+                <div class="archive-extra">
+                    <div class="mini-info">
+                        <span class="mini-label">FIELD</span>
+                        <span>Wildlife Medicine</span>
+                    </div>
+                    <div class="mini-info">
+                        <span class="mini-label">MEANING</span>
+                        <span>멸종 위기 대형 포유류 수송 및 이송 프로토콜 안정성 확보</span>
+                    </div>
+                </div>
+                <button class="view-btn">View Archive →</button>
+            </div>
+
+            <div class="archive-card" data-category="medicine">
+                <div class="archive-top">
+                    <span class="archive-tag">MEDICINE · 2004</span>
+                    <span class="archive-number">#10</span>
+                </div>
+                <h2>Herring Flatulence Communication</h2>
+                <p class="archive-kor">청어들은 청각적 방귀로 대화를 나눈다?</p>
+                <p class="archive-desc">
+                    청어 무리가 야간이나 포식자 출몰 시 항문 유기 강내 기체를 배출해 고주파 펄스 소리를 내는 것을 측정. 어둠 속 무리의 대형을 유지하는 소통 체계임을 밝힘.
+                </p>
+                <div class="archive-extra">
+                    <div class="mini-info">
+                        <span class="mini-label">FIELD</span>
+                        <span>Marine Bioacoustics</span>
+                    </div>
+                    <div class="mini-info">
+                        <span class="mini-label">MEANING</span>
+                        <span>포식자에게 들키지 않는 고주파 영역의 독자적 생태 통신망 연구</span>
+                    </div>
+                </div>
+                <button class="view-btn">View Archive →</button>
             </div>
 
         </div>
-
-        <!-- GRID -->
-
-        <div class="archive-grid">
-
-            <!-- CARD 1 -->
-
-            <div class="archive-card"
-                 data-category="biology">
-
-                <div class="archive-top">
-
-                    <span class="archive-tag">
-                        BIOLOGY · 2000
-                    </span>
-
-                    <span class="archive-number">
-                        #01
-                    </span>
-
-                </div>
-
-                <h2>
-                    Levitating Frogs
-                </h2>
-
-                <p class="archive-kor">
-                    살아있는 개구리를 자기장으로 공중부양시킬 수 있는가?
-                </p>
-
-                <p class="archive-desc">
-                    강한 자기장에서 생체 조직이 보이는
-                    반자성(diamagnetism) 현상을 연구한 실험.
-                </p>
-
-                <div class="archive-extra">
-
-                    <div class="mini-info">
-
-                        <span class="mini-label">
-                            FIELD
-                        </span>
-
-                        <span>
-                            Biophysics
-                        </span>
-
-                    </div>
-
-                    <div class="mini-info">
-
-                        <span class="mini-label">
-                            MEANING
-                        </span>
-
-                        <span>
-                            MRI / 자기장 응용
-                        </span>
-
-                    </div>
-
-                </div>
-
-                <button class="view-btn">
-                    View Archive →
-                </button>
-
-            </div>
-
-            <!-- CARD 2 -->
-
-            <div class="archive-card"
-                 data-category="physics">
-
-                <div class="archive-top">
-
-                    <span class="archive-tag">
-                        PHYSICS · 2017
-                    </span>
-
-                    <span class="archive-number">
-                        #02
-                    </span>
-
-                </div>
-
-                <h2>
-                    Cat Fluid Dynamics
-                </h2>
-
-                <p class="archive-kor">
-                    고양이는 액체인가?
-                </p>
-
-                <p class="archive-desc">
-                    고양이가 용기의 형태를 따라 변형되는 현상을
-                    유체역학적으로 분석한 연구.
-                </p>
-
-                <div class="archive-extra">
-
-                    <div class="mini-info">
-
-                        <span class="mini-label">
-                            FIELD
-                        </span>
-
-                        <span>
-                            Fluid Mechanics
-                        </span>
-
-                    </div>
-
-                    <div class="mini-info">
-
-                        <span class="mini-label">
-                            MEANING
-                        </span>
-
-                        <span>
-                            점탄성 분석
-                        </span>
-
-                    </div>
-
-                </div>
-
-                <button class="view-btn">
-                    View Archive →
-                </button>
-
-            </div>
-
-            <!-- CARD 3 -->
-
-            <div class="archive-card"
-                 data-category="medicine">
-
-                <div class="archive-top">
-
-                    <span class="archive-tag">
-                        MEDICINE · 2022
-                    </span>
-
-                    <span class="archive-number">
-                        #03
-                    </span>
-
-                </div>
-
-                <h2>
-                    Ice Cream Headache
-                </h2>
-
-                <p class="archive-kor">
-                    왜 아이스크림을 급하게 먹으면 머리가 아픈가?
-                </p>
-
-                <p class="archive-desc">
-                    차가운 음식이 혈관과 신경에 미치는 영향을
-                    실험적으로 분석한 연구.
-                </p>
-
-                <div class="archive-extra">
-
-                    <div class="mini-info">
-
-                        <span class="mini-label">
-                            FIELD
-                        </span>
-
-                        <span>
-                            Neurology
-                        </span>
-
-                    </div>
-
-                    <div class="mini-info">
-
-                        <span class="mini-label">
-                            MEANING
-                        </span>
-
-                        <span>
-                            신경 반응 연구
-                        </span>
-
-                    </div>
-
-                </div>
-
-                <button class="view-btn">
-                    View Archive →
-                </button>
-
-            </div>
-
-        </div>
-
-        <!-- QUOTE -->
 
         <div class="ignobel-quote">
-
             <p>
                 “First make people laugh,<br>
                 then make them think.”
             </p>
-
         </div>
 
-        <a class="btn-back"
-           onclick="showSection('home')">
-
-           ← Back to Home
-
-        </a>
-
+        <button class="btn-back" onclick="showSection('home')">
+            ← Back to Home
+        </button>
     </section>
 
-    <!-- IDEA -->
-
     <section id="idea">
-
         <div class="content-header">
-
-            <h1>
-                Idea Lab / Sandbox
-            </h1>
-
-            <p>
-                정해진 틀 없이 자유롭게 가설을 세우고 시뮬레이션합니다.
-            </p>
-
+            <h1>Idea Lab / Sandbox</h1>
+            <p>정해진 틀 없이 자유롭게 가설을 세우고 시뮬레이션합니다.</p>
         </div>
 
         <div class="post-list">
-
             <div class="post-item">
-
-                <span>
-                    바이오 센서를 이용한 실시간 변이 추적 시스템 제안
-                </span>
-
-                <span>
-                    Draft
-                </span>
-
+                <span>바이오 센서를 이용한 실시간 변이 추적 시스템 제안</span>
+                <span>Draft</span>
             </div>
-
         </div>
 
-        <a class="btn-back"
-           onclick="showSection('home')">
-
-           ← Back to Home
-
-        </a>
-
+        <button class="btn-back" onclick="showSection('home')">
+            ← Back to Home
+        </button>
     </section>
 
-    <!-- FOOTER -->
+    <section id="admin">
+        <div class="content-header">
+            <h1>Admin / Add New Archive</h1>
+            <p>이그노벨 아카이브에 새로운 카드 연구 데이터를 추가합니다.</p>
+        </div>
+
+        <form class="admin-form" id="adminForm" onsubmit="handleCreateCard(event)">
+            <div class="form-group">
+                <label for="cardCategory">Category</label>
+                <select id="cardCategory" required>
+                    <option value="biology">Biology</option>
+                    <option value="chemistry">Chemistry</option>
+                    <option value="physics">Physics</option>
+                    <option value="medicine">Medicine</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="cardYear">Year</label>
+                <input type="number" id="cardYear" placeholder="e.g., 2026" required />
+            </div>
+
+            <div class="form-group">
+                <label for="cardTitle">Title (English)</label>
+                <input type="text" id="cardTitle" placeholder="e.g., Levitating Frogs" required />
+            </div>
+
+            <div class="form-group">
+                <label for="cardKor">Core Question (Korean)</label>
+                <input type="text" id="cardKor" placeholder="e.g., 고양이는 유체인가?" required />
+            </div>
+
+            <div class="form-group">
+                <label for="cardDesc">Description</label>
+                <textarea id="cardDesc" rows="3" placeholder="연구 내용에 대한 상세 설명을 입력하세요." required></textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="cardField">Field</label>
+                <input type="text" id="cardField" placeholder="e.g., Biophysics" required />
+            </div>
+
+            <div class="form-group">
+                <label for="cardMeaning">Meaning / Application</label>
+                <input type="text" id="cardMeaning" placeholder="e.g., MRI 응용 연구" required />
+            </div>
+
+            <button type="submit" class="btn-submit">Add to Archive</button>
+        </form>
+
+        <button class="btn-back" onclick="showSection('home')">
+            ← Back to Home
+        </button>
+    </section>
 
     <footer>
-
-        © 2026 Yunjini.
-        All research for future Nobel.
-
+        © 2026 Yunjini. All research for future Nobel.
     </footer>
 
-    <!-- SCRIPT -->
-
     <script>
+        let currentCategory = 'all';
+        const ADMIN_PASSWORD = "1234"; // 관리자 임시 패스워드
 
+        window.addEventListener('DOMContentLoaded', () => {
+            loadSavedCards();
+        });
+
+        /* SECTION SWITCHING */
         function showSection(sectionId) {
-
-            const sections =
-                document.querySelectorAll('section');
-
+            const sections = document.querySelectorAll('section');
             sections.forEach(section => {
-
                 section.classList.remove('active');
-
             });
 
-            const target =
-                document.getElementById(sectionId);
-
+            const target = document.getElementById(sectionId);
             if (target) {
-
                 target.classList.add('active');
-
                 window.scrollTo(0, 0);
-
             }
-
         }
 
-        /* FILTER */
+        /* ADMIN ACCESS CHECK */
+        function tryAdminAccess() {
+            const inputPassword = prompt("관리자 비밀번호를 입력하세요:");
+            
+            if (inputPassword === null) return;
+            
+            if (inputPassword === ADMIN_PASSWORD) {
+                alert("인증에 성공했습니다. 관리자 모드로 진입합니다.");
+                showSection('admin');
+            } else {
+                alert("비밀번호가 일치하지 않습니다.");
+            }
+        }
 
-        function filterArchive(category, el) {
+        /* CREATE CARD LOGIC */
+        function handleCreateCard(event) {
+            event.preventDefault();
 
-            const cards =
-                document.querySelectorAll('.archive-card');
+            const newCardData = {
+                id: Date.now(),
+                category: document.getElementById('cardCategory').value,
+                year: document.getElementById('cardYear').value,
+                title: document.getElementById('cardTitle').value,
+                kor: document.getElementById('cardKor').value,
+                desc: document.getElementById('cardDesc').value,
+                field: document.getElementById('cardField').value,
+                meaning: document.getElementById('cardMeaning').value
+            };
 
-            const buttons =
-                document.querySelectorAll('.filter-btn');
+            renderCardDOM(newCardData);
 
-            buttons.forEach(btn => {
+            const savedCards = JSON.parse(localStorage.getItem('yj_custom_cards')) || [];
+            savedCards.push(newCardData);
+            localStorage.setItem('yj_custom_cards', JSON.stringify(savedCards));
 
-                btn.classList.remove('active');
+            document.getElementById('adminForm').reset();
+            alert("성공적으로 카드가 추가되었습니다!");
+            showSection('ignobel');
+        }
 
+        function renderCardDOM(data) {
+            const grid = document.getElementById('archiveGrid');
+            
+            const currentCardCount = grid.querySelectorAll('.archive-card').length + 1;
+            const displayNum = String(currentCardCount).padStart(2, '0');
+
+            const cardElement = document.createElement('div');
+            cardElement.className = 'archive-card';
+            cardElement.setAttribute('data-category', data.category);
+
+            cardElement.innerHTML = `
+                <div class="archive-top">
+                    <span class="archive-tag">${data.category} · ${data.year}</span>
+                    <span class="archive-number">#${displayNum}</span>
+                </div>
+                <h2>${data.title}</h2>
+                <p class="archive-kor">${data.kor}</p>
+                <p class="archive-desc">${data.desc}</p>
+                <div class="archive-extra">
+                    <div class="mini-info">
+                        <span class="mini-label">FIELD</span>
+                        <span>${data.field}</span>
+                    </div>
+                    <div class="mini-info">
+                        <span class="mini-label">MEANING</span>
+                        <span>${data.meaning}</span>
+                    </div>
+                </div>
+                <button class="view-btn">View Archive →</button>
+            `;
+
+            grid.appendChild(cardElement);
+        }
+
+        function loadSavedCards() {
+            const savedCards = JSON.parse(localStorage.getItem('yj_custom_cards')) || [];
+            savedCards.forEach(cardData => {
+                renderCardDOM(cardData);
             });
+        }
 
+        /* FILTER CLICK */
+        function filterArchive(category, el) {
+            currentCategory = category;
+
+            const buttons = document.querySelectorAll('.filter-btn');
+            buttons.forEach(btn => btn.classList.remove('active'));
             el.classList.add('active');
 
-            cards.forEach(card => {
-
-                const cardCategory =
-                    card.dataset.category;
-
-                if (
-                    category === 'all' ||
-                    cardCategory === category
-                ) {
-
-                    card.style.display = 'block';
-
-                } else {
-
-                    card.style.display = 'none';
-
-                }
-
-            });
-
+            applyFilterAndSearch();
         }
 
-        /* SEARCH */
-
+        /* SEARCH INPUT SYSTEM */
         function searchArchive() {
-
-            const input =
-                document.getElementById('searchInput')
-                .value
-                .toLowerCase();
-
-            const cards =
-                document.querySelectorAll('.archive-card');
-
-            cards.forEach(card => {
-
-                const text =
-                    card.innerText.toLowerCase();
-
-                if (text.includes(input)) {
-
-                    card.style.display = 'block';
-
-                } else {
-
-                    card.style.display = 'none';
-
-                }
-
-            });
-
+            applyFilterAndSearch();
         }
 
-    </script>
+        /* INTEGRATED FILTER & SEARCH LOGIC */
+        function applyFilterAndSearch() {
+            const query = document.getElementById('searchInput').value.toLowerCase();
+            const cards = document.querySelectorAll('.archive-card');
 
+            cards.forEach(card => {
+                const cardCategory = card.getAttribute('data-category');
+                const cardText = card.innerText.toLowerCase();
+
+                const matchesCategory = (currentCategory === 'all' || cardCategory === currentCategory);
+                const matchesSearch = cardText.includes(query);
+
+                if (matchesCategory && matchesSearch) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+    </script>
 </body>
 </html>
-```
